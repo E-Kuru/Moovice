@@ -1,0 +1,6 @@
+.nav {
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
