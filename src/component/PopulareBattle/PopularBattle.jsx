@@ -13,6 +13,7 @@ export class PopularBattle extends Component {
             favorite : []
         }
         this.moviesBattle = this.moviesBattle.bind(this)
+        this.clearAll = this.clearAll.bind(this)
     }
 
     componentDidMount(){
@@ -33,17 +34,21 @@ export class PopularBattle extends Component {
 
         if(currentBattle === 18){
             alert('Vous avec parcourus tous les films, GG !')
-            this.setState({
-                currentBattle : 0
-            })
         }
         else{
             this.setState({
                 currentBattle : this.state.currentBattle += 2,
                 favorite : [...favorite,i]
             })
-            // localStorage.clear()
         }
+    }
+
+    clearAll (){
+        this.setState({
+            currentBattle : 0,
+            favorite : [],
+        })
+        localStorage.clear()
     }
 
     render() {
@@ -54,6 +59,8 @@ export class PopularBattle extends Component {
             <div className='all-battle-cards'>
 
                 <h1>Popular-Battle</h1>
+
+                <button onClick={this.clearAll}>Clear</button>
                 <div className="battle">
                 {movies.map( (e,i) => {
 
