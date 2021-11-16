@@ -1,23 +1,36 @@
 import React, { Component } from 'react'
 
-export class Favorites extends Component {
+class Favorites extends Component {
     constructor ( ){
         super()
 
         this.state = {
             movies : [],
-            favID : JSON.parse(localStorage.getItem('favorite'))
+            popularFav : JSON.parse(localStorage.getItem('Popular-Favorites')),
+            weeklyFav : JSON.parse(localStorage.getItem('Weekly-Favorites'))
         }
         this.getMovie = this.getMovie.bind(this)
-        this.componentDidMount = this.componentDidMount.bind(this)
     }
 
     componentDidMount () {
-        let {favID} = this.state
         
-        favID.forEach(e => {
-            this.getMovie(JSON.stringify(e))
+        this.state.popularFav.forEach(e => {
+            if(!e){
+                console.log('Error');
+            }
+            else{
+                this.getMovie(JSON.stringify(e))
+            }
         });
+
+        this.state.weeklyFav.forEach(e => {
+            if(!e){
+                console.log('Error');
+            }
+            else{
+                this.getMovie(JSON.stringify(e))
+            }
+        })
     }
 
     getMovie (id){
@@ -34,7 +47,7 @@ export class Favorites extends Component {
     
     render() {
         const {movies} = this.state
-        console.log(this.state.movies);
+        console.log(this.state.popularFav);
         // console.log(this.state.favID);
         return (
             <div>

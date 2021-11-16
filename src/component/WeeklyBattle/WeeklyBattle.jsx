@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import moment from 'moment';
 
-import './populare-battle.css'
 
-class PopularBattle extends Component {
+class WeeklyBattle extends Component {
     
     constructor () {
         super()
@@ -17,10 +17,15 @@ class PopularBattle extends Component {
     }
 
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=74ff4d5b18f55c304a239fadf716fe2f')
+
+        const lastWeek = moment().subtract(1, 'week').calendar()
+        const realTime = moment(lastWeek).format('YYYY-MM-DD')
+        const nowTime = moment().format('YYYY-MM-DD')
+
+        fetch(`http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${realTime}&primary_release_date.lte=${nowTime}&api_key=74ff4d5b18f55c304a239fadf716fe2f`)
         .then(res => res.json())
         .then( res => 
-            
+
             this.setState({
                 movies : res.results
             })
@@ -43,7 +48,7 @@ class PopularBattle extends Component {
     }
 
     clearAll (){
-        
+
         this.setState({
             currentBattle : 0,
             favorite : []
@@ -54,7 +59,7 @@ class PopularBattle extends Component {
 
     render() {
         const {movies, currentBattle,favorite} = this.state
-        localStorage.setItem('Popular-Favorites', JSON.stringify(favorite));
+        localStorage.setItem('Weekly-Favorites', JSON.stringify(favorite));
 
         return (
             <div className='all-battle-cards'>
@@ -82,4 +87,4 @@ class PopularBattle extends Component {
     }
 }
 
-export default PopularBattle
+export default WeeklyBattle

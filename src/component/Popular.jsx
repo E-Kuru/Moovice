@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Card from './cards/Card'
 
-export class Popular extends Component {
+class Popular extends Component {
     constructor () {
         super()
 

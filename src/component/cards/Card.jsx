@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
 import './cards.css'
-export class Card extends Component {
+
+class Card extends Component {
     render() {
         const { movies } = this.props
         return (

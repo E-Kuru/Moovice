@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 import Weekly from './component/Weekly'
-import WeeklyBattle from './component/WeeklyBattle'
+import WeeklyBattle from './component/WeeklyBattle/WeeklyBattle'
 import Popular from './component/Popular'
 import PopularBattle from './component/PopulareBattle/PopularBattle'
 import Favorites from './component/Favorites/Favorites'

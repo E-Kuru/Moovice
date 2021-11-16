@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import Card from './cards/Card'
 
-export class Weekly extends Component {
+class Weekly extends Component {
 
     constructor () {
         super()
@@ -36,7 +36,8 @@ export class Weekly extends Component {
         return (
             <div>
                 <h1>Weekly</h1>
-                <Card movies={this.state.movies}/>
+                <Card 
+                movies={this.state.movies}/>
             </div>
         )
     }
