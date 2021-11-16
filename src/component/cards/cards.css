@@ -1,3 +1,11 @@
+* {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 2%;
+}
+
 .all-movies {
   display: flex;
   justify-content: space-around;

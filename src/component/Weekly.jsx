@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import moment from 'moment';
+
 import Card from './cards/Card'
 
 export class Weekly extends Component {
@@ -13,7 +15,12 @@ export class Weekly extends Component {
     }
 
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=74ff4d5b18f55c304a239fadf716fe2f')
+        
+        const lastWeek = moment().subtract(1, 'week').calendar()
+        const nowTime = moment('fr').format('DD-MM-YYYY')
+        const realTime = moment(lastWeek).format('DD-MM-YYYY')
+
+        fetch(`http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${realTime}&primary_release_date.lte=${nowTime}&api_key=74ff4d5b18f55c304a239fadf716fe2f`)
         .then(res => res.json())
         .then( res => 
             
@@ -23,6 +30,7 @@ export class Weekly extends Component {
         )
     }
 
+    
     render() {
         return (
             <div>

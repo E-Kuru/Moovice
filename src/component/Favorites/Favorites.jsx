@@ -43,7 +43,7 @@ export class Favorites extends Component {
                 {movies.map(e => (
                     <div className="movies-card" key={e.id + e.original_title}>
                         <h2>{e.title}</h2>
-                        <img src={`https://image.tmdb.org/t/p/w300/${e.poster_path}`} alt="image" style={{width : '50%'}} />
+                        <img src={`https://image.tmdb.org/t/p/w300/${e.poster_path}`} alt='img' style={{width : '50%'}} />
                         <p>Date : {e.release_date}</p>
                         <p>Overview : <br />{e.overview}</p>
                     </div>
