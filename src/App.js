@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Weekly from './component/Weekly'
 import WeeklyBattle from './component/WeeklyBattle'
 import Popular from './component/Popular'
-import PopularBattle from './component/PopularBattle'
+import PopularBattle from './component/PopulareBattle/PopularBattle'
 import Favorites from './component/Favorites'
 import Error from './component/Error'
 import Home from './component/Home'

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import img from '../../assets/film-img.png'
 import './cards.css'
 export class Card extends Component {
     render() {

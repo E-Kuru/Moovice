@@ -1,12 +1,19 @@
-.all-movies {
+.all-battle-cards {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   margin-top: 1%;
   align-items: center;
-  flex-wrap: wrap;
 }
 
-.movies-card {
+.battle {
+  margin-top: 4%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.battle-cards {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -17,14 +24,14 @@
   border: 1px solid rgb(124, 124, 124);
 }
 
-.movies-card p {
+.battle-cards p {
   width: 90%;
 }
 
-.movies-card h2 {
+.battle-cards h2 {
   margin-top: 4%;
 }
 
-.movies-card img {
+.battle-cards img {
   margin: 2% 0;
 }
